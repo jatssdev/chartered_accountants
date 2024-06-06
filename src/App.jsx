@@ -1,22 +1,33 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React, { useState } from 'react'
 import Sidebar from './components/sideBar/sidebar'
+import { Outlet } from 'react-router-dom'
+import { Layout } from 'antd'
+import Navbar from './components/utils/Navbar'
+import { createContext } from 'react';
 
-function App() {
+export let mainContext = createContext()
+
+const App = () => {
+
+  let [isOpen, setIsOpen] = useState(null);
+
+  let value = { isOpen, setIsOpen };
+
+
+
   return (
     <>
-      <div className="min-h-screen flex">
-        <section className="flex flex-grow">
-          <div className="grid grid-cols-12 w-full">
-            <div className="col-span-2 bg-gray-800 text-white p-4">
-              <Sidebar />
-            </div>
-            <div className="col-span-10 bg-white p-6">
-              <Outlet />
-            </div>
-          </div>
-        </section>
-      </div>
+      <mainContext.Provider value={value}>
+        <Navbar />
+        <div className="grid grid-cols-12">
+          <section className='col-span-3'>
+            <Sidebar />
+          </section>
+          <section className='col-span-9 pt-14'>
+            <Outlet />
+          </section>
+        </div>
+      </mainContext.Provider>
     </>
   )
 }

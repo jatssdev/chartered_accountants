@@ -1,11 +1,17 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#001529',  // Customize your primary color
+        secondary: '#1890ff',  // Customize your secondary color
+      },
+    },
   },
   plugins: [],
 }
+
