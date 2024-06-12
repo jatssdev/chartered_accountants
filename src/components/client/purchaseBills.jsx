@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Bills = () => {
+const puchaseBills = () => {
     return (
         <>
 
@@ -48,4 +48,4 @@ const Bills = () => {
     )
 }
 
-export default Bills
+export default puchaseBills

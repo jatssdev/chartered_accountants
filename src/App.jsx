@@ -18,7 +18,7 @@ const App = () => {
   return (
     <>
       <mainContext.Provider value={value}>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="grid grid-cols-12">
           <section className='col-span-3'>
             <Sidebar />
